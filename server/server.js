@@ -4,13 +4,10 @@ const cors = require('cors'); // Import cors
 const { verifyEmail } = require('./index'); // Import verify function
 
 const app = express();
-const port = process.env.PORT || 3001; // Server runs on port 3001
-
-// Enable CORS for your React Vite client development server
+const port = process.env.PORT || 3001; 
 app.use(cors({
-    origin: 'http://localhost:5173' 
+    origin: process.env.FRONTEND_URL || 'http://localhost:5173' 
 }));
-
 app.use(express.json()); // Support JSON-encoded request bodies
 
 // Optional static asset path from old frontend
