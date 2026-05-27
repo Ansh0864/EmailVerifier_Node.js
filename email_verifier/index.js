@@ -80,7 +80,6 @@ function checkSMTP(mxRecord, email, domain) {
 async function verifyEmail(email) {
     const startTime = process.hrtime();
     const timestamp = new Date().toISOString();
-    
     let response = {
         email,
         result: 'unknown',

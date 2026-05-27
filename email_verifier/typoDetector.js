@@ -25,13 +25,11 @@ function getDidYouMean(email) {
 
     for (const validDomain of commonDomains) {
         if (domain === validDomain) return null; 
-
         const distance = levenshtein(domain, validDomain);
         if (distance > 0 && distance <= 2) {
             return `${localPart}@${validDomain}`;
         }
     }
-
     return null;
 }
 module.exports = { getDidYouMean };

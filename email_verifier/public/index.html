@@ -12,7 +12,6 @@
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
         }
-
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             background-color: var(--bg-color);
@@ -23,7 +22,6 @@
             min-height: 100vh;
             margin: 0;
         }
-
         .container {
             background-color: var(--surface-color);
             padding: 2.5rem;
@@ -32,26 +30,22 @@
             width: 100%;
             max-width: 500px;
         }
-
         h1 {
             margin-top: 0;
             font-size: 1.5rem;
             color: var(--primary-glow);
             letter-spacing: 0.5px;
         }
-
         p {
             color: var(--text-muted);
             margin-bottom: 2rem;
             font-size: 0.95rem;
         }
-
         .input-group {
             display: flex;
             gap: 10px;
             margin-bottom: 1.5rem;
         }
-
         input {
             flex: 1;
             padding: 12px 16px;
@@ -63,12 +57,10 @@
             outline: none;
             transition: all 0.2s ease;
         }
-
         input:focus {
             border-color: var(--primary-glow);
             box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
         }
-
         button {
             padding: 12px 24px;
             border-radius: 6px;
@@ -80,21 +72,17 @@
             cursor: pointer;
             transition: background-color 0.2s ease;
         }
-
         button:hover {
             background-color: #0284c7;
         }
-
         button:disabled {
             background-color: #475569;
             cursor: not-allowed;
         }
-
         #result-container {
             display: none;
             margin-top: 1.5rem;
         }
-
         pre {
             background-color: #0f1523;
             padding: 1rem;
@@ -106,7 +94,6 @@
             font-size: 0.85rem;
             margin: 0;
         }
-
         .loader {
             display: none;
             color: var(--text-muted);
@@ -116,7 +103,6 @@
     </style>
 </head>
 <body>
-
     <div class="container">
         <h1>Email Verifier</h1>
         <p>Enter an email address below to test the verification API logic.</p>
@@ -144,8 +130,6 @@
             const resultContainer = document.getElementById('result-container');
             const jsonOutput = document.getElementById('json-output');
             const loader = document.getElementById('loader');
-
-            // Reset UI
             submitBtn.disabled = true;
             resultContainer.style.display = 'none';
             loader.style.display = 'block';
@@ -160,8 +144,6 @@
                 });
 
                 const data = await response.json();
-                
-                // Display formatted JSON
                 jsonOutput.textContent = JSON.stringify(data, null, 2);
                 resultContainer.style.display = 'block';
             } catch (error) {
@@ -173,6 +155,5 @@
             }
         });
     </script>
-
 </body>
 </html>
